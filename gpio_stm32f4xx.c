@@ -1,4 +1,6 @@
 #include "gpio_interface.h"
+#include "stm32f411xe.h"
+
 #define PINS_PER_PORT 16
 /* covers A, B, C, D, E, and H (as per 8.1 in STM32F411xC/E Ref. Manual */
 #define NUM_GPIO_PORTS NUM_GPIO_PINS/PINS_PER_PORT
