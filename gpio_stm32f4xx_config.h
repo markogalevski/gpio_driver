@@ -21,12 +21,12 @@ typedef enum
 
 }gpio_pin_t;
 
-
 typedef enum
 {
 	GPIO_PIN_LOW = 0UL,
 	GPIO_PIN_HIGH = 1UL
 }gpio_pin_state_t;
+
 typedef enum
 {
   GPIO_INPUT,

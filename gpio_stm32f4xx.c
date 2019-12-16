@@ -2,7 +2,7 @@
 #include "stm32f411xe.h"
 
 #define PINS_PER_PORT 16
-/* covers A, B, C, D, E, and H (as per 8.1 in STM32F411xC/E Ref. Manual */
+/* covers A, B, C, D, E (as per 8.1 in STM32F411xC/E Ref. Manual, but no H */
 #define NUM_GPIO_PORTS NUM_GPIO_PINS/PINS_PER_PORT
 
 extern const uint32_t ACTIVE_GPIO_PINS;
@@ -70,46 +70,53 @@ static volatile uint32_t *const GPIO_AFRH[NUM_GPIO_PORTS] =
 
 };
 
-void gpio_init(gpio_config_t * gpio_config)
+void gpio_init(gpio_config_t * config_table)
 {
 	uint32_t pin_number = 0;
 	uint32_t port_number = 0;
 
 	for (int i = 0; i < ACTIVE_GPIO_PINS; i++)
 	{
-		assert(gpio_config[i].pin < NUM_GPIO_PINS);
-		pin_number = gpio_config[i].pin % PINS_PER_PORT;
-		port_number = gpio_config[i].pin / PINS_PER_PORT;
+		assert(config_table[i].pin < NUM_GPIO_PINS);
+		pin_number = config_table[i].pin % PINS_PER_PORT;
+		port_number = config_table[i].pin / PINS_PER_PORT;
 
 		*GPIO_MODER[port_number] &= ~(0x03UL << (pin_number*2));
-	    *GPIO_MODER[port_number] |= gpio_config[i].mode << (0x03UL << (pin_number*2));
+	    *GPIO_MODER[port_number] |= config_table[i].mode << (pin_number*2);
 
-	    *GPIO_OTYPER[port_number] |= gpio_config[i].output << (0x01UL << pin_number);
+	    *GPIO_OTYPER[port_number] |= config_table[i].output << pin_number;
 
 	    *GPIO_OSPEEDR[port_number] &= ~(0x03UL << (pin_number*2));
-	    *GPIO_OSPEEDR[port_number] |= gpio_config[i].speed << (0x03UL << (pin_number*2));
+	    *GPIO_OSPEEDR[port_number] |= config_table[i].speed << (pin_number*2);
 
 	    *GPIO_PUPDR[port_number] &= ~(0x03UL << (pin_number*2));
-	    *GPIO_PUPDR[port_number] |= gpio_config[i].resistor << (0x03UL << (pin_number*2));
+	    *GPIO_PUPDR[port_number] |= config_table[i].resistor << (pin_number*2);
 
-	    if (pin_number < PINS_PER_PORT / 2)
+	    if (pin_number < (PINS_PER_PORT / 2))
 	    {
-	    	*GPIO_AFRL[port_number] |= gpio_config[i].mux << (0x0FUL << (pin_number*4));
+	    	*GPIO_AFRL[port_number] |= config_table[i].mux << (pin_number*4);
 	    }
 	    else
 	    {
-	    	*GPIO_AFRH[port_number] |= gpio_config[i].mux << (0x0FUL << (pin_number - PINS_PER_PORT/2)*4);
+	    	*GPIO_AFRH[port_number] |= config_table[i].mux << ((pin_number - PINS_PER_PORT/2)*4);
 	    }
 
 	}
 }
 
-uint32_t gpio_pin_read(gpio_pin_t pin)
+gpio_pin_state_t gpio_pin_read(gpio_pin_t pin)
 {
 	uint32_t pin_number = pin % PINS_PER_PORT;
 	uint32_t port_number = pin / PINS_PER_PORT;
-	uint32_t register_value = (*GPIO_IDR[port_number] & (0x01 << pin_number)) >> pin_number;
-	return (register_value);
+	uint32_t register_value = (*GPIO_IDR[port_number] & (0x01 << pin_number));
+	if (register_value == 0)
+	{
+		return (GPIO_PIN_LOW);
+	}
+	else
+	{
+		return (GPIO_PIN_HIGH);
+	}
 }
 
 void gpio_pin_write(gpio_pin_t pin, gpio_pin_state_t value)
