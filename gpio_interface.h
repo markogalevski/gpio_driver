@@ -2,7 +2,7 @@
 #define _GPIO_H
 
 
-#include "gpio_stm32f4xx_config.h"
+#include <gpio_stm32f411_config.h>
 #include "assert.h"
 
 void gpio_init(gpio_config_t *config_table);
