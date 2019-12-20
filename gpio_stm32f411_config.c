@@ -1,4 +1,4 @@
-#include <gpio_stm32f411_config.h>
+#include "gpio_stm32f411_config.h"
 
 static const gpio_config_t gpio_config_table[] = {
 	//PIN		//MODE			//RESISTOR			//OUTPUT		//SPEED 		//MUX
