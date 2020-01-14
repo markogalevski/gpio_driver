@@ -32,16 +32,17 @@
 #include "gpio_interface.h"
 #include "stm32f411xe.h"
 
-#define PINS_PER_PORT 16
+#define PINS_PER_PORT 16 /**<The number of pins per letter named port */
 /* covers A, B, C, D, E (as per 8.1 in STM32F411xC/E Ref. Manual, but no H */
-#define NUM_GPIO_PORTS NUM_GPIO_PINS/PINS_PER_PORT
-#define MODERy_WIDTH 0x03UL
-#define OTYPERy_WIDTH 0x01UL
-#define OSPEEDRy_WIDTH 0x03UL
-#define PUPDRy_WIDTH 0x03UL
-#define AFLHRy_WIDTH 0x0FUL
+#define NUM_GPIO_PORTS NUM_GPIO_PINS/PINS_PER_PORT /**<Number of letter named ports*/
+#define MODERy_WIDTH 0x03UL /**<The width of the bitfield controlling a pin's mode*/
+#define OTYPERy_WIDTH 0x01UL /**<The width of the bitfield controlling the output type of a pin */
+#define OSPEEDRy_WIDTH 0x03UL /**<The width of the bitfield controlling the output speed of a pin */
+#define PUPDRy_WIDTH 0x03UL /**<The width of the bitfield controlling pull up/pull down selection*/
+#define AFLHRy_WIDTH 0x0FUL /**<The width of a the bitfield controlling the alternate function MUX */
 
-extern const uint32_t ACTIVE_GPIO_PINS;
+extern const uint32_t ACTIVE_GPIO_PINS; /** Defined in the appropriate .c config file. Prevents iteration
+ 	 	 	 	 	 	 	 	 	 	 	 over 64 pins when only a few are used*/
 
 /**
  * Array of pointers to the GPIO Pin Mode Registers
@@ -370,7 +371,7 @@ void gpio_pin_toggle(gpio_pin_t pin)
  *
  * POST-CONDITION: The register has been modified.
  *
- * @param			pin is the pin whose state we wish to change
+ * @param			gpio_register is the register whose contents we wish to change
  *
  * @param 			value is the state which we wish the pin to assume
  *
@@ -413,7 +414,7 @@ void gpio_register_write(uint32_t gpio_register, uint32_t value)
  *
  * POST-CONDITION: The registers contents are returned
  *
- * @param			pin is the pin whose state we wish to change
+ * @param			gpio_register whose contents we wish to read
   *
  * @return			uint32_t the value within the register
  *

@@ -44,7 +44,10 @@ static const gpio_config_t gpio_config_table[] = {
 {	GPIO_B_3, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6},
 {	GPIO_B_5, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6}
 };
+
+
 const uint32_t ACTIVE_GPIO_PINS = sizeof(gpio_config_table)/sizeof(gpio_config_t);
+/**<Prevents iteration over 64 pins when only a few are used*/
 
 
 /******************************************************************************

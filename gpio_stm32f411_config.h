@@ -1,4 +1,3 @@
-
 /*******************************************************************************
 * Title                 :   General Purpose Input/Output (GPIO) STM32F411 Config
 * Filename              :   gpio_stm32f411_config.h
