@@ -1,4 +1,5 @@
-documentation/output/latex
+./documentation/output/latex
+./documentation/output/latex/*
 *.log
 doxygen_log.txt
 
