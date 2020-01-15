@@ -34,15 +34,19 @@
 #include "gpio_stm32f411_config.h"
 
 /**
- * A table containing the settings required to eachieve the desirted behaviours for each pin.
+ * A table containing the settings required to eachieve the desired behaviours for each pin.
  * Irrelevant fields are ignored at a hardware level, so feel free to place zeros to save space.
  */
-static const gpio_config_t gpio_config_table[] = {
+static const gpio_config_t gpio_config_table[] =
+{
 	//PIN		//MODE			//RESISTOR			//OUTPUT		//SPEED 		//MUX
 	//e.g. for i2s
 {	GPIO_A_15, 	GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR,  GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6},
 {	GPIO_B_3, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6},
-{	GPIO_B_5, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6}
+{	GPIO_B_5, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_6},
+{ 	GPIO_B_10, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_4},
+{   GPIO_B_11, GPIO_ALTERNATE_FUNCTION, GPIO_NO_RESISTOR, GPIO_PUSH_PULL, GPIO_HIGH_SPEED, GPIO_AF_4}
+
 };
 
 

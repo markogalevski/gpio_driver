@@ -41,7 +41,7 @@
 #define PUPDRy_WIDTH 0x03UL /**<The width of the bitfield controlling pull up/pull down selection*/
 #define AFLHRy_WIDTH 0x0FUL /**<The width of a the bitfield controlling the alternate function MUX */
 
-extern const uint32_t ACTIVE_GPIO_PINS; /** Defined in the appropriate .c config file. Prevents iteration
+extern const uint32_t ACTIVE_GPIO_PINS; /**<Defined in the appropriate .c config file. Prevents iteration
  	 	 	 	 	 	 	 	 	 	 	 over 64 pins when only a few are used*/
 
 /**
