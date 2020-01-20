@@ -70,7 +70,7 @@ const uint32_t ACTIVE_GPIO_PINS = sizeof(gpio_config_table)/sizeof(gpio_config_t
  * \b Example:
  *
  * @code
- * const gpio_config_t gpio_config_table = gpio_config_get(void);
+ * const gpio_config_t *gpio_config_table = gpio_config_get(void);
  * gpio_init(gpio_config_table);
  * @endcode
  *

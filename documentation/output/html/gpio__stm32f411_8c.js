@@ -13,5 +13,14 @@ var gpio__stm32f411_8c =
     [ "gpio_pin_write", "gpio__stm32f411_8c.html#ac1fc916f9add814d8e48656082157d69", null ],
     [ "gpio_register_read", "gpio__stm32f411_8c.html#a2b37f1fe30f115d92f9d8a4aea7dc705", null ],
     [ "gpio_register_write", "gpio__stm32f411_8c.html#a0578742f44243946456798e9f99b409d", null ],
-    [ "ACTIVE_GPIO_PINS", "gpio__stm32f411_8c.html#ac1d1f780f23cf17a4685aeeb7362e89d", null ]
+    [ "ACTIVE_GPIO_PINS", "gpio__stm32f411_8c.html#ac1d1f780f23cf17a4685aeeb7362e89d", null ],
+    [ "GPIO_AFRH", "gpio__stm32f411_8c.html#a82c0161d5a811269de4f8d89d5c695d5", null ],
+    [ "GPIO_AFRL", "gpio__stm32f411_8c.html#afe8a0a6c1c14e5c0f85ff5b1ee37ebb0", null ],
+    [ "GPIO_BSRR", "gpio__stm32f411_8c.html#adc833f7f839ad541817d3c6eb26102f1", null ],
+    [ "GPIO_IDR", "gpio__stm32f411_8c.html#a91b37875f95b7010385c0b1d848ab10b", null ],
+    [ "GPIO_MODER", "gpio__stm32f411_8c.html#aba250fc3bcc11b8006512bdc2f1613d5", null ],
+    [ "GPIO_ODR", "gpio__stm32f411_8c.html#a05054104f82f808f36412a4789fc0a64", null ],
+    [ "GPIO_OSPEEDR", "gpio__stm32f411_8c.html#a9301d545ab0fe46de69520cdef437aea", null ],
+    [ "GPIO_OTYPER", "gpio__stm32f411_8c.html#a3eb39bcd4c43cf621954dc733388cfe8", null ],
+    [ "GPIO_PUPDR", "gpio__stm32f411_8c.html#aca048b629d4541402304e112b0ea6165", null ]
 ];

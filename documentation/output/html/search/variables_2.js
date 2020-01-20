@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['output_5fspeed',['output_speed',['../structgpio__config__t.html#ac73298500a7a55286292448e82fcbdbf',1,'gpio_config_t']]],
-  ['output_5ftype',['output_type',['../structgpio__config__t.html#abebe3aee0015b70fbbbd12a796451b62',1,'gpio_config_t']]]
+  ['mode',['mode',['../structgpio__config__t.html#a23aeec8098631547d58a797b2ad857c1',1,'gpio_config_t']]],
+  ['mux',['mux',['../structgpio__config__t.html#a517a0cd4125fcd45504b02d3c4a35d06',1,'gpio_config_t']]]
 ];

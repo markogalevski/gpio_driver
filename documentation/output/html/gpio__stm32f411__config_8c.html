@@ -108,7 +108,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac1d1f780f23cf17a4685aeeb7362e89d"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__stm32f411__config_8c.html#ac1d1f780f23cf17a4685aeeb7362e89d">ACTIVE_GPIO_PINS</a> = sizeof(gpio_config_table)/sizeof(<a class="el" href="structgpio__config__t.html">gpio_config_t</a>)</td></tr>
+<tr class="memitem:a0e3a1e91e9ee1939febbdc3621e8390b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structgpio__config__t.html">gpio_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__stm32f411__config_8c.html#a0e3a1e91e9ee1939febbdc3621e8390b">gpio_config_table</a> []</td></tr>
+<tr class="separator:a0e3a1e91e9ee1939febbdc3621e8390b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d1f780f23cf17a4685aeeb7362e89d"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__stm32f411__config_8c.html#ac1d1f780f23cf17a4685aeeb7362e89d">ACTIVE_GPIO_PINS</a> = sizeof(<a class="el" href="gpio__stm32f411__config_8c.html#a0e3a1e91e9ee1939febbdc3621e8390b">gpio_config_table</a>)/sizeof(<a class="el" href="structgpio__config__t.html">gpio_config_t</a>)</td></tr>
 <tr class="separator:ac1d1f780f23cf17a4685aeeb7362e89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -134,7 +136,7 @@ Variables</h2></td></tr>
 <p>POST-CONDITION: The returned value points to the base of the config table</p>
 <dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structgpio__config__t.html">gpio_config_t</a> *</dd></dl>
 <p><b>Example:</b> </p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structgpio__config__t.html">gpio_config_t</a> gpio_config_table = <a class="code" href="gpio__stm32f411__config_8c.html#a2f1150ba6fa738e90abcd72b16507062">gpio_config_get</a>(<span class="keywordtype">void</span>);</div><div class="line"><a class="code" href="gpio__interface_8h.html#a19bc61b9832a2879bc1c8953dcfae407">gpio_init</a>(gpio_config_table);</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="gpio__stm32f411_8c.html#a19bc61b9832a2879bc1c8953dcfae407">gpio_init</a></dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structgpio__config__t.html">gpio_config_t</a> *<a class="code" href="gpio__stm32f411__config_8c.html#a0e3a1e91e9ee1939febbdc3621e8390b">gpio_config_table</a> = <a class="code" href="gpio__stm32f411__config_8c.html#a2f1150ba6fa738e90abcd72b16507062">gpio_config_get</a>(<span class="keywordtype">void</span>);</div><div class="line"><a class="code" href="gpio__interface_8h.html#a19bc61b9832a2879bc1c8953dcfae407">gpio_init</a>(gpio_config_table);</div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="gpio__stm32f411_8c.html#a19bc61b9832a2879bc1c8953dcfae407">gpio_init</a></dd></dl>
 <p><br />
 <b> - CHANGE HISTORY - </b></p>
 <table align="left" style="width:800px">
@@ -155,11 +157,38 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint32_t ACTIVE_GPIO_PINS = sizeof(gpio_config_table)/sizeof(<a class="el" href="structgpio__config__t.html">gpio_config_t</a>)</td>
+          <td class="memname">const uint32_t ACTIVE_GPIO_PINS = sizeof(<a class="el" href="gpio__stm32f411__config_8c.html#a0e3a1e91e9ee1939febbdc3621e8390b">gpio_config_table</a>)/sizeof(<a class="el" href="structgpio__config__t.html">gpio_config_t</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Prevents iteration over 64 pins when only a few are used </p>
+
+</div>
+</div>
+<a id="a0e3a1e91e9ee1939febbdc3621e8390b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3a1e91e9ee1939febbdc3621e8390b">&#9670;&nbsp;</a></span>gpio_config_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structgpio__config__t.html">gpio_config_t</a> gpio_config_table[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">    </div><div class="line">    </div><div class="line">{   GPIO_A_15,  <a class="code" href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a>, <a class="code" href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a>,  <a class="code" href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a>, <a class="code" href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a>, GPIO_AF_6},</div><div class="line">{   GPIO_B_3, <a class="code" href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a>, <a class="code" href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a>, <a class="code" href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a>, <a class="code" href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a>, GPIO_AF_6},</div><div class="line">{   GPIO_B_5, <a class="code" href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a>, <a class="code" href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a>, <a class="code" href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a>, <a class="code" href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a>, GPIO_AF_6},</div><div class="line">{   GPIO_B_10, <a class="code" href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a>, <a class="code" href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a>, <a class="code" href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a>, <a class="code" href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a>, GPIO_AF_4},</div><div class="line">{   GPIO_B_11, <a class="code" href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a>, <a class="code" href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a>, <a class="code" href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a>, <a class="code" href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a>, GPIO_AF_4}</div><div class="line"></div><div class="line">}</div><div class="ttc" id="gpio__stm32f411__config_8h_html_a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9"><div class="ttname"><a href="gpio__stm32f411__config_8h.html#a491a2cbfb4e94f2afcc0d5bdef2dc454a17fc775975ea5fd3a7d9e61a9ed158d9">GPIO_ALTERNATE_FUNCTION</a></div><div class="ttdef"><b>Definition:</b> gpio_stm32f411_config.h:79</div></div>
+<div class="ttc" id="gpio__stm32f411__config_8h_html_aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04"><div class="ttname"><a href="gpio__stm32f411__config_8h.html#aa8c7c905e73523d86cfed9bd45aa9495adb3d95caeba959c63a9709ca19a9cd04">GPIO_HIGH_SPEED</a></div><div class="ttdef"><b>Definition:</b> gpio_stm32f411_config.h:120</div></div>
+<div class="ttc" id="gpio__stm32f411__config_8h_html_a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775"><div class="ttname"><a href="gpio__stm32f411__config_8h.html#a09cae9c54cabb67e47ab4c1200b341c6a2ede6e0f1b50e67e840a93701323c775">GPIO_PUSH_PULL</a></div><div class="ttdef"><b>Definition:</b> gpio_stm32f411_config.h:104</div></div>
+<div class="ttc" id="gpio__stm32f411__config_8h_html_ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38"><div class="ttname"><a href="gpio__stm32f411__config_8h.html#ae69599cbb4f87bfc9da21f3db8b0fe3aa97f95634a424bda4c7b4437a0e4b5f38">GPIO_NO_RESISTOR</a></div><div class="ttdef"><b>Definition:</b> gpio_stm32f411_config.h:92</div></div>
+</div><!-- fragment --><p>A table containing the settings required to eachieve the desired behaviours for each pin. Irrelevant fields are ignored at a hardware level, so feel free to place zeros to save space. </p>
 
 </div>
 </div>
